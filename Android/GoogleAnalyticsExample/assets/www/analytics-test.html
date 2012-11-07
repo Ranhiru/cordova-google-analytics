@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+
+    <script type="text/javascript" src="js/cordova-2.1.0.js"></script>
+    <script type="text/javascript" src="js/google-analytics.js"></script>
+
+    <script type="text/javascript" >
+
+    	var analytics;
+    
+        function init() {
+            document.addEventListener("deviceready", deviceReady, true);
+        }
+
+        function deviceReady() {
+            console.log("Device Ready!");
+            analytics = cordova.require("com/github/ranhiru/googleanalytics");
+            console.log("Initialized Analytics!");
+        }
+
+        function trackPageView() {
+        	analytics.trackView("Analytics Sample Page", function() {
+        		console.log("analytics.trackView successful! " + i);
+        		test = false;
+        	}, function(error) {
+        		alert("analytics.trackView Failed! " + error);
+        	});
+        }
+
+        function trackEvent() {
+            analytics.trackEvent("Sample Category", "Sample Action", "Sample Label", 1, function() {
+                console.log("analytics.trackEvent successful!");
+            }, function(error) {
+                alert("analytics.trackEvent Failed! " + error);
+            });
+        }
+
+        function trackSocial() {
+            analytics.trackSocial("Facebook", "Like", "http://www.github.com", function() {
+                console.log("analytics.trackSocial successful!");
+            }, function(error) {
+                alert("analytics.trackSocial Failed! " + error);
+            });
+
+            analytics.trackSocial("Twitter", "Tweet", "http://www.github.com", function() {
+                console.log("analytics.trackSocial successful!");
+            }, function(error) {
+                alert("analytics.trackSocial Failed! " + error);
+            });
+
+            analytics.trackSocial("Google+", "+1", "http://www.github.com", function() {
+                console.log("analytics.trackSocial successful!");
+            }, function(error) {
+                alert("analytics.trackSocial Failed! " + error);
+            });
+        }
+
+        function trackTiming() {
+            analytics.trackTiming("Sample Category", 5000 , "Sample Name", "Sample Label", function() {
+                console.log("analytics.trackTiming successful!");
+            }, function(error) {
+                alert("analytics.trackTiming Failed! " + error);
+            });
+        }
+
+        function dispatch() {        	
+        	analytics.dispatch(function() {
+        		console.log("analytics.dispatch successful!");      		
+        	}, function(error) {
+        		alert("analytics.dispatch Failed! " + error);
+        	});
+        }
+    </script>
+
+</head>
+<body onload="init()">
+     <button onclick="trackPageView()">Track PageView!</button>
+     <br/>
+     <button onclick="trackEvent()">Track Event!</button>
+     <br/>
+     <button onclick="trackSocial()">Track Social!</button>
+     <br/>
+     <button onclick="trackTiming()">Track Timing!</button>
+     <br/>
+     <button onclick="dispatch()">Dispatch!</button>
+</body>
+</html>
