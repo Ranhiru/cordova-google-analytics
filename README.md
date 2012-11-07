@@ -5,7 +5,7 @@ This is an Apache Cordova Plugin built for the latest version of Google Analytic
 
 ## Project Status ##
 
-- Android - **In Progress**
+- Android - Completed and added sample project. Needs to update Wiki with details on how to integrate the plugin to a project.
 
 	Currently the plugin is being created to work with Apache Cordova 2.1 + Google Analytics v2 SDK.
 
