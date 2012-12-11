@@ -3,6 +3,14 @@ Google Analytics for Cordova + Android
 
 This is an Apache Cordova Plugin for Google Analytics which is compatible with Cordova 2.1 and the new Google Analytics Android SDK v2.
 
+----
+
+## How ? ##
+
+1. [Read the Analytic Considerations](https://github.com/Ranhiru/cordova-google-analytics/wiki/Analytic-Considerations)
+2. [Integrate the plugin to your project](https://github.com/Ranhiru/cordova-google-analytics/wiki/Integration-Guide) 
+3. [Start collecting analytics](https://github.com/Ranhiru/cordova-google-analytics/wiki/API) 
+
 ---
 
 ## Change Log ##
