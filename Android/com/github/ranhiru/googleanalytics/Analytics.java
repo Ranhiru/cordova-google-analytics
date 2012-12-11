@@ -24,7 +24,8 @@ public class Analytics extends Plugin {
             	GoogleAnalytics.trackView(args.getString(0));
             	
             } else if (action.equals(TRACK_EVENT)) {
-            	GoogleAnalytics.trackEvent(args.getString(0), args.getString(1), args.getString(2), args.getLong(3));
+            	Object optValue = args.isNull(3) ? null : args.getLong(3);            	
+            	GoogleAnalytics.trackEvent(args.getString(0), args.getString(1), args.getString(2), optValue);
             	
             } else if (action.equals(TRACK_SOCIAL)) {
             	GoogleAnalytics.trackSocial(args.getString(0), args.getString(1), args.getString(2));
