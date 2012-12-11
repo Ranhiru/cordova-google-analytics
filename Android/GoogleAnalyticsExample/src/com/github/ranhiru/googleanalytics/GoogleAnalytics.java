@@ -1,3 +1,10 @@
+/**
+ * Author: Ranhiru Cooray 
+ * License: The MIT License (MIT)
+ * Copyright (c) 2012 Ranhiru Cooray
+ * v1.0.1
+ */
+
 package com.github.ranhiru.googleanalytics;
 
 import com.google.analytics.tracking.android.EasyTracker;
@@ -24,8 +31,12 @@ public class GoogleAnalytics {
 	 * @param label The label
 	 * @param optValue An optional value
 	 */
-	public static void trackEvent(String category, String action, String label, long optValue) {
-		EasyTracker.getTracker().trackEvent(category, action, label, optValue);		
+	public static void trackEvent(String category, String action, String label, Object optValue) {		
+		if (optValue == null) {
+			EasyTracker.getTracker().trackEvent(category, action, label, null);		
+		} else {
+			EasyTracker.getTracker().trackEvent(category, action, label, (Long) optValue);	
+		}
 	}
 	
 	/**
