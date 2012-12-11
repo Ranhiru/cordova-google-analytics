@@ -1,3 +1,10 @@
+/**
+ * Author: Ranhiru Cooray 
+ * License: The MIT License (MIT)
+ * Copyright (c) 2012 Ranhiru Cooray
+ * v1.0.1
+ */
+
 cordova.define("com/github/ranhiru/googleanalytics", function(require, exports, module) {
 	var exec = require("cordova/exec");
 	var GoogleAnalytics = function () {};
